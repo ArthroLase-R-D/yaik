@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yaik"
+version = "0.1.0"
+description = "Yet Another IK: symbolic IK solver and code generator (packaged fork of weigao95/yaik)."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = "==3.10.*"
+dependencies = [
+    "attrs==23.2.0",
+    "numpy==1.26.4",
+    "PyYAML==6.0.1",
+    "scipy>=1.15.3",
+    "sympy==1.12",
+]
+
+[project.urls]
+Upstream = "https://github.com/weigao95/yaik"
+
+# yaik is a flat-layout project: a handful of top-level modules alongside a few
+# top-level packages. List both explicitly so the build does not depend on
+# setuptools auto-discovery (which bails on flat layouts with multiple roots).
+[tool.setuptools]
+py-modules = [
+    "convert_kinematic_chain",
+    "ik_solve",
+    "py_codegen",
+    "cpp_codegen",
+    "python_run_import",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fk*", "solver*", "codegen*", "utility*"]
