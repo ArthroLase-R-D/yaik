@@ -29,6 +29,7 @@ py-modules = [
     "ik_solve",
     "py_codegen",
     "cpp_codegen",
+    "rust_codegen",
     "python_run_import",
 ]
 
