@@ -18,4 +18,5 @@ def run_cpp_codegen(tree_yaml_path: Optional[str] = None, use_safe_operator: boo
 
 
 if __name__ == '__main__':
-    run_cpp_codegen()
+    run_cpp_codegen("articulating_arm/articulating_arm_ik.yaml")
+    run_cpp_codegen("cobotta/cobotta_ik.yaml")

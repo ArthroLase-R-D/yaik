@@ -17,4 +17,5 @@ def run_rust_codegen(tree_yaml_path: Optional[str] = None, use_safe_operator: bo
 
 
 if __name__ == '__main__':
-    run_rust_codegen()
+    run_rust_codegen("articulating_arm/articulating_arm_ik.yaml")
+    run_rust_codegen("cobotta/cobotta_ik.yaml")
